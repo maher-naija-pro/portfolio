@@ -55,8 +55,8 @@ const Hero = () => {
  //           words="Transforming Concepts into Seamless User Experiences"
  //           className="text-center text-[40px] md:text-5xl lg:text-6xl"
  //         />
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi ! I&apos;m Maher, a Platform Solution architect based in France.
+            <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+            Transforming Concepts into Seamless User Experiences
           </p>
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hi ! I&apos;m Maher, a Platform Solution architect based in France.
