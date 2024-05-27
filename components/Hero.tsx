@@ -45,10 +45,11 @@ const Hero = () => {
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Help you building your product
           </p>
+          <h1 className="heading lg:max-w-[45vw]">
+            Transforming Concepts into Seamless{" "}
+            <span className="text-purple">User Experiences</span>
+          </h1>
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Transforming Concepts into Seamless User Experiences
-          </p>
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hi ! I&apos;m Maher, a Platform Solution architect based in France.
           </p>
