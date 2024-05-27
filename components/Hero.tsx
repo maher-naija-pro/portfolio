@@ -45,7 +45,7 @@ const Hero = () => {
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Help you building your product
           </p>
-          <h1 className="heading lg:max-w-[45vw]">
+          <h1 className="heading lg:max-w-[45vw] padding-top: 10px">
             Transforming Concepts into Seamless{" "}
             <span className="text-purple">User Experiences</span>
           </h1>
