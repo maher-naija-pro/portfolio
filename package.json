@@ -10,6 +10,9 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
+    "@nextui-org/navbar": "^2.0.31",
+    "@nextui-org/system": "^2.2.0",
+    "@nextui-org/theme": "^2.2.4",
     "@react-three/drei": "^9.105.4",
     "@react-three/fiber": "^8.16.2",
     "@sentry/nextjs": "^8.4.0",
