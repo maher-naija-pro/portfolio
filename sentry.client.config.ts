@@ -5,7 +5,7 @@
 import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
-  dsn: "https://7b883d075caa19b41fd9b00ae313a1c6@o4506813739368448.ingest.us.sentry.io/4507222371729408",
+  dsn: "https://6e52f9c6cef0c7ec92b9abeb473f52a3@o4507328419004416.ingest.de.sentry.io/4507328422608976",
 
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1,
