@@ -57,7 +57,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Maher, a Platform Solution architect based in France.
+            Hi ! I&apos;m Maher, a Platform Solution architect based in France.
           </p>
 
           <a href="#about">
