@@ -16,6 +16,15 @@ services:
       - "3000:3000"
     environment:
       NODE_ENV: development
+    develop:
+      watch:
+        - action: sync
+          path: ./
+          target: /app/src
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
     # If your application exposes a port, uncomment the following lines and change
     # the port numbers as needed. The first number is the host port and the second
     # is the port inside the container.

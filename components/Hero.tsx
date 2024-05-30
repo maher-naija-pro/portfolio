@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Help you building your product
+            Helpf you building your product
           </p>
 
           <h1 className="heading lg:max-w-[45vw]  mt-8 pt-1.5 ">
