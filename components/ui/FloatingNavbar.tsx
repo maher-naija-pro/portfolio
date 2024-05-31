@@ -48,14 +48,14 @@ export const FloatingNav = ({
       <motion.div
         initial={{
           opacity: 1,
-          y: -100,
+          y: 10,
         }}
         animate={{
           y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.0,
         }}
         className={cn(
           // change rounded-full to rounded-lg
@@ -85,11 +85,13 @@ export const FloatingNav = ({
             <span className=" text-sm !cursor-pointer">{navItem.name}</span>
           </Link>
         ))}
-        {/* remove this login btn */}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
+        {""}
+        {
+          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+            <span>Login</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+          </button>
+        }
       </motion.div>
     </AnimatePresence>
   );
