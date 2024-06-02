@@ -11,8 +11,7 @@ export default withSentryConfig(nextConfig, {
 
   // An auth token is required for uploading source maps.
   authToken: process.env.SENTRY_AUTH_TOKEN,
-  widenClientFileUpload: true,
-transpileClientSDK: true,
+  widenClientFileUpload: truetranspileClientSDK: true,
   silent: false, // Can be used to suppress logs
 });
 
