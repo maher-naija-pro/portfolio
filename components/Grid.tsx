@@ -1,4 +1,4 @@
-import { gridItems } from "@/data";
+import { gridItems } from "@/app/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 
 const Grid = () => {

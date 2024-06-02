@@ -1,12 +1,11 @@
 "use client";
 
-import { navItems } from "@/data";
+import { navItems } from "@/app/data";
 
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
-import SignInn from "@/components/SignIn";
 //import Clients from "@/components/Clients";
 import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
@@ -22,7 +21,6 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        <SignInn />
         <Grid />
         <RecentProjects />
         <Experience />
