@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { signOut } from "next-auth/react";
 import {
   motion,
   AnimatePresence,
@@ -87,8 +88,20 @@ export const FloatingNav = ({
         ))}
         {""}
         {
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-10 py-2 rounded-lg">
-            <span>Login</span>
+          <button
+            onClick={() => signOut()}
+            className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-10 py-2 rounded-lg"
+          >
+            <span>Logout</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+          </button>
+        }
+        {
+          <button
+            onClick="window.location.href='https://w3docs.com';"
+            className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-10 py-2 rounded-lg"
+          >
+            <span>Loginn</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
         }
