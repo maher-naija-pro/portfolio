@@ -8,7 +8,6 @@ export function SignIn() {
         className="bg-gray-800 p-10 rounded shadow-md"
         action={async () => {
           "use server";
-
           await signIn("github");
         }}
       >
