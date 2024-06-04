@@ -1,9 +1,8 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
-import type { Provider } from "next-auth/providers";
 
-const providers: Provider[] = [GitHub];
+import type { Provider } from "next-auth/providers";
 
 export const providerMap = providers.map((provider) => {
   if (typeof provider === "function") {
@@ -13,6 +12,8 @@ export const providerMap = providers.map((provider) => {
     return { id: provider.id, name: provider.name };
   }
 });
+
+const providers: Provider[] = [GitHub];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
