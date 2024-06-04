@@ -8,19 +8,7 @@ const providers: Provider[] = [GitHub];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
-  callbacks: {
-    jwt({ token, user }) {
-      if (user) {
-        // User is available during sign-in
-        token.id = user.id;
-      }
-      return token;
-    },
-    session({ session, token }) {
-      session.user.id = token.id;
-      return session;
-    },
-  },
+
   pages: {
     signIn: "/user/sign-in",
   },

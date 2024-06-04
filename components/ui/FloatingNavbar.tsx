@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { auth } from "@/lib/auth";
 
 export const FloatingNav = ({
   navItems,
@@ -95,16 +96,19 @@ export const FloatingNav = ({
             className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-lg"
           >
             <span>Logout</span>
+
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
         }
-        <button
-          onClick={() => router.push("/user/sign-in")}
-          className="border text-sm font-medium relativ border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-lg"
-        >
-          <span>Loginn</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button>
+        {
+          <button
+            onClick={() => router.push("/user/sign-in")}
+            className="border text-sm font-medium relativ border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-lg"
+          >
+            <span>Login</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+          </button>
+        }
       </motion.div>
     </AnimatePresence>
   );
