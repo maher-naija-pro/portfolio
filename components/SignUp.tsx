@@ -2,11 +2,11 @@
 
 export function SignUp() {
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-900">
+    <div className="flex justify-center p-10 rounded shadow-md  items-center h-screen bg-gray-900">
       
 
  <form
-        className="bg-gray-800 p-10 rounded shadow-md">
+        className="bg-gray-800 p-10 rounded shadow-md  transition duration-300 ease-in-out">
       
           <h2 className="text-2xl font-bold mb-4 text-gray-100">Sign Up</h2>
           <div className="mb-4">
@@ -41,7 +41,9 @@ export function SignUp() {
           </div>
         <button
           type="submit"
-          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-lg active:bg-violet-400 hover:bg-gray-700 hover:text-white"
+          className="
+          border text-sm font-medium relative  w-full border-neutral-200 dark:border-white/[0.2] text-black dark:text-white center r items-center px-8 py-2 rounded-lg hover:bg-gray-700 hover:text-white focus:bg-gray-600 focus:text-white active:bg-violet-400 active:text-white
+    "
         >
          Create account
         </button>
