@@ -1,6 +1,8 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { PrismaClient } from "@prisma/client"
 
 import type { Provider } from "next-auth/providers";
 
@@ -8,7 +10,7 @@ const providers: Provider[] = [GitHub];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
-
+  adapter: PrismaAdapter(prisma),
   pages: {
     signIn: "/user/sign-in",
   },
