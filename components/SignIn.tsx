@@ -18,6 +18,10 @@ export function SignIn() {
         >
           Sign in with GitHub
         </button>
+        <div>       <a href="/user/sign-up" className="text-sm font-medium text-gray-400 hover:text-gray-200">
+          Don't have an account? Sign up
+        </a></div>
+   
       </form>
     </div>
   );

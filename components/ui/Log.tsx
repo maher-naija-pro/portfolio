@@ -8,7 +8,7 @@ import { signOut } from "next-auth/react";
 export function Log() {
     
   const session = useSession()
-  const router = useRouter();
+
   if (session.data?.user) {
 
     return (
@@ -26,11 +26,12 @@ export function Log() {
     );
   }
   else return (
-      <div className="">
+    <div className="">
+        
       <button
-          onClick={() => router.push("/user/sign-in")}
+
           className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-lg"
-        >  <span>LogIn</span>
+        >  <a href="/user/sign-in">LogIn</a>
 
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button>
