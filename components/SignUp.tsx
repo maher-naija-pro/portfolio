@@ -41,7 +41,7 @@ export function SignUp() {
           </div>
         <button
           type="submit"
-          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white"
+          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-lg active:bg-violet-400 hover:bg-gray-700 hover:text-white"
         >
          Create account
         </button>
