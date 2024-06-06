@@ -4,6 +4,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
+
+import { useSession } from "next-auth/react"
+import { auth } from "@/lib/auth";
+import { SessionProvider } from "next-auth/react"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -11,12 +15,15 @@ export const metadata: Metadata = {
   description: "Maher naija Portfolio",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
+       <SessionProvider session={session}>
+ 
     <html lang="en" suppressHydrationWarning>
       <head>
         <link
@@ -35,6 +42,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
-    </html>
+      </html>
+         </SessionProvider>
   );
 }
