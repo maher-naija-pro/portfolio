@@ -10,7 +10,7 @@ const providers: Provider[] = [GitHub];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
-  adapter: PrismaAdapter(prisma),
+ // adapter: PrismaAdapter( PrismaClient),
   pages: {
     signIn: "/user/sign-in",
   },
