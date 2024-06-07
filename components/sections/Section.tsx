@@ -1,4 +1,4 @@
-import { Log } from "./ui/Log";
+import { Log } from "../ui/Log";
 
      // <Log />
 const Section = () => {
