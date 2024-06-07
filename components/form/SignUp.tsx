@@ -3,8 +3,11 @@ import { TSignUpSchema, signUpSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm, type FieldValues } from "react-hook-form"
+import  { useState, FormEvent } from "react"
 
 export function SignUp() {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  
 const {
   register,
   handleSubmit,
@@ -17,6 +20,8 @@ const {
 
 
   const onSubmit = async (data: TSignUpSchema) => {
+    setIsLoading(true)
+    
     const response = await fetch("/api/sign-up", {
       method: "POST",
       body: JSON.stringify(data),
@@ -24,7 +29,7 @@ const {
         "Content-Type": "application/json",
       },
     });
- 
+ setIsLoading(false)
     if (!response.ok) {
       // response status is not 2xx
       alert("Submitting form failed!");
@@ -77,11 +82,15 @@ const {
         <div >
 
         <button
-          type="submit"
+            type="submit"
+            disabled={isLoading}
           className="
           border text-sm font-medium relative  w-full border-neutral-200 dark:border-white/[0.2] text-black dark:text-white center r items-center px-8 py-2 rounded-lg hover:bg-gray-700 hover:text-white focus:bg-gray-600 focus:text-white active:bg-violet-400 active:text-white"
-        >  
-          <a className="text-sm font-medium relative  w-full dark:border-white/[0.2] text-black dark:text-white center px-8 py-2 hover:text-whit focus:text-white active:bg-violet-400 active:text-white">   Create account </a>
+          >  
+
+            <a className="text-sm font-medium relative  w-full dark:border-white/[0.2] text-black dark:text-white center px-8 py-2 hover:text-whit focus:text-white active:bg-violet-400 active:text-white">              {isLoading ? 'Loading...' : 'Signup'}
+          
+            </a>
           </button>
           </div>
    </form>
