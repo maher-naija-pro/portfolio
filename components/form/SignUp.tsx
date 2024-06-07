@@ -1,23 +1,54 @@
 "use client"
-
+import { TSignUpSchema, signUpSchema } from "@/lib/types";
+import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm, type FieldValues } from "react-hook-form"
 
 export function SignUp() {
 const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
-    getValues,
-  } = useForm();
-const onSubmit = async (data: FieldValues) => {
-    // TODO: submit to server
-    // ...
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+  register,
+  handleSubmit,
+  formState: { errors, isSubmitting },
+  reset,
+  setError,
+  } = useForm<TSignUpSchema>({
+    resolver: zodResolver(signUpSchema),
+  });
 
-    reset();
+
+  const onSubmit = async (data: TSignUpSchema) => {
+    const response = await fetch("/api/sign-up", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+ 
+    if (!response.ok) {
+      // response status is not 2xx
+      alert("Submitting form failed!");
+   
+    }
+    const responseData = await response.json();
+
+
+    if (responseData.errors) {
+      const errors = responseData.errors;
+
+      if (errors.email) {
+        setError("email", {
+          type: "server",
+          message: errors.email,
+        });
+      } else {
+        alert("Something went wrong!");
+      }
+    }
+
+    // reset();
   };
+
   return (
     <div className="flex justify-center p-10 rounded shadow-md  items-center h-screen bg-gray-900">
       
@@ -34,7 +65,6 @@ const onSubmit = async (data: FieldValues) => {
               type="email"
             id="email"
                {...register("email", {
-          required: "Email is required",
         })}
               placeholder="your email here"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow  hover:bg-gray-700 hover:text-white"
