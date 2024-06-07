@@ -1,7 +1,26 @@
 import { signUpSchema } from "@/lib/types";
 import { NextResponse } from "next/server";
+import { PrismaClient } from '@prisma/client'
+
+
 
 export async function POST(request: Request) {
+
+
+  const prisma = new PrismaClient()
+  
+  await prisma.user.create({
+    data: {
+      name: 'Alice',
+      email: 'alice@prisma.io',
+    },
+  })
+
+ const allUsers = await prisma.user.findMany()
+  console.log(allUsers)
+
+
+
   const body: unknown = await request.json();
 
   const result = signUpSchema.safeParse(body);
