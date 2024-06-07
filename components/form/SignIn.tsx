@@ -1,4 +1,6 @@
+
 import { signIn, providerMap } from "@/lib/auth";
+
 import { AuthError } from "next-auth";
 
 export function SignIn() {
@@ -10,6 +12,8 @@ export function SignIn() {
           "use server";
           await signIn("github");
         }}
+
+
       >
         <h2 className="text-2xl font-bold mb-4 text-gray-100">Sign In</h2>
         <div className="mb-4">
