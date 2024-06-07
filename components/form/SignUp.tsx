@@ -1,26 +1,23 @@
 "use client"
 
 import React from "react";
-import { useForm, type FieldValues } from "react-hook-form";
- 
+import { useForm, type FieldValues } from "react-hook-form"
 
-export  function SignUp() {
-    const {
+export function SignUp() {
+const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
     getValues,
   } = useForm();
-
-    const onSubmit = async (data: FieldValues) => {
+const onSubmit = async (data: FieldValues) => {
     // TODO: submit to server
     // ...
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     reset();
   };
-
   return (
     <div className="flex justify-center p-10 rounded shadow-md  items-center h-screen bg-gray-900">
       
@@ -54,7 +51,7 @@ export  function SignUp() {
           className="
           border text-sm font-medium relative  w-full border-neutral-200 dark:border-white/[0.2] text-black dark:text-white center r items-center px-8 py-2 rounded-lg hover:bg-gray-700 hover:text-white focus:bg-gray-600 focus:text-white active:bg-violet-400 active:text-white"
         >  
-          <a className="text-sm font-medium relative  w-fulldark:border-white/[0.2] text-black dark:text-white center px-8 py-2 hover:text-whit focus:text-white active:bg-violet-400 active:text-white">   Create account </a>
+          <a className="text-sm font-medium relative  w-full dark:border-white/[0.2] text-black dark:text-white center px-8 py-2 hover:text-whit focus:text-white active:bg-violet-400 active:text-white">   Create account </a>
           </button>
           </div>
    </form>
